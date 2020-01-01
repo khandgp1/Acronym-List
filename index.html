@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Acronym App</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -15,31 +16,59 @@
 		<h1 class="title">{{ title }}</h1>
 
 		<div class="main">
-		
-			<div class="left-panel">
+
+
+      <aside class="menu">
+        <br><br>
+        <p class="menu-label">
+          Search
+        </p>
+        <div class="field is-grouped">
+          <input class="input" type="text" placeholder="Start Typing Acronym...">
+          <p class="control"></p>
+        </div>
+        <br>
+        <p class="menu-label">
+          Common Searches
+        </p>
+        <ul class="menu-list">
+          <li><a>SSDS</a></li>
+          <li><a>SEWIP</a></li>
+          <li><a>APL</a></li>
+        </ul>
+      </aside>
+
+			<!-- <div class="left-panel">
 				
-				<label style="margin: 10px;
-							font-weight: bold; font-size: 18px">
-					Search
-				</label>		
-				<br>
-				<input 
-						v-on:keyup.enter="test"
+				<label> Search </label>
+        <br>
+        
+        <div class="field is-grouped">
+          <input class="input" type="text" placeholder="Text input">
+          <p class="control"></p>
+        </div>
+        
+        <input 
+						v-on:keyup.enter="findword"
 						placeholder="Type in acronym ..."
 						name="search_word"
 						v-model="word"
-				>
-						
-
-				<br>
-				<button @click="findAcronym">Find</button>
+        >
+        <br>
+        <button class="button" @click="findAcronym"> Find </button>
 				<br>
 
 				<p>{{ test }}</p>
 
-			</div> 
+      </div> -->
 
-			<div class="right-panel">Right Side</div>
+      <!-- <div class="verticledivider"></div> -->
+
+      <div class="right-panel">
+        <h2 class="selectedWord">{{ word }}</h2> <br>
+        <h3 class="selectedDescription"> {{ description }} </h3>
+      </div>
+
 
 		</div>
 

@@ -5,7 +5,8 @@ var app = new Vue({
 	data: {
 
 		title: "SSDS T&E Acronyms",
-		word: null,
+		word: "SSDS",
+		description: "Ship Self-Defense System",
 		test: null
 
 	},
@@ -17,7 +18,7 @@ var app = new Vue({
 				.get('http://localhost:5000/acronymnList/' + this.word)
 				.then(response => (this.test = response.data.acronymn))		
 		},
-		test() {
+		findword() {
 			this.test = "letsdoit"
 		}
 	}
