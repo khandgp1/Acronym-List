@@ -23,13 +23,19 @@
 					Search
 				</label>		
 				<br>
-				<input placeholder="Type in acronym ..."
+				<input 
+						v-on:keyup.enter="test"
+						placeholder="Type in acronym ..."
 						name="search_word"
-						v-model="word">
+						v-model="word"
+				>
+						
 
 				<br>
 				<button @click="findAcronym">Find</button>
 				<br>
+
+				<p>{{ test }}</p>
 
 			</div> 
 
@@ -40,6 +46,7 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="main.js"></script>
 
 </body>

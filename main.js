@@ -5,23 +5,25 @@ var app = new Vue({
 	data: {
 
 		title: "SSDS T&E Acronyms",
-
 		word: null,
-
-		buttonFlag: false
+		test: null
 
 	},
 
 	methods: {
 
 		findAcronym() {
-			pythonMethod_findAcronym(this.word)
+			axios
+				.get('http://localhost:5000/acronymnList/' + this.word)
+				.then(response => (this.test = response.data.acronymn))		
+		},
+		test() {
+			this.test = "letsdoit"
 		}
-
-		}
+	}
 })
-
-
+  
+  
 
 
 
